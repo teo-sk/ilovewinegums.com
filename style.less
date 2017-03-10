@@ -1,0 +1,281 @@
+/*	Resets
+	------	*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup, 
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+
+a img {border: 0;}
+
+
+@font-face {
+    font-family: 'corpulent';
+    src: url('fonts/ccaps-webfont.eot');
+    src: url('fonts/ccaps-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/ccaps-webfont.woff') format('woff'),
+         url('fonts/ccaps-webfont.ttf') format('truetype'),
+         url('fonts/ccaps-webfont.svg#corpulent_caps_brkregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font: 'corpulent';
+/*	Typography presets
+	------------------	*/
+
+.gigantic {
+	font-size: 110px;
+	line-height: 120px;
+	letter-spacing: -2px;
+}
+
+.huge, h1 {
+	font-size: 88px;
+	line-height: 95px;
+	font-weight: normal;
+}
+h1 span {
+	margin: 0;
+	padding: 0;
+	letter-spacing: -43;
+	padding-bottom: 10px !important;
+	display: inline-block;
+	&:first-child {
+		margin-left: 30px;
+	}
+}
+h1 {
+	.geel {color: #d7df23;}
+	.oranje {color:#f7941e;}
+	.donker-oranje {color: #f15a29;}
+	.roze {color: #ee2a7b;}
+	.mat-groen {color: #00a79d;}
+	.lichtblauw {color: #27aae1}
+	.donkerblauw {color: #1c75bc;}
+	.donkergroen {color: #00a651;}
+	.donkerroze {color: #ec008c;}
+	.lichtgroen {color: #8dc63f;}
+	.lichtgeel {color: #f9ed32;}
+	.viesbruin {color: #c49a6c;}
+	.paars {color: #662d91;}
+	.donkerpaars {color: #9e1f63};
+}
+/* Selection colours (easy to forget) */
+
+::selection 	 	{background: rgb(255,255,158);}
+::-moz-selection 	{background: rgb(255,255,158);}
+img::selection 		{background: transparent;}
+img::-moz-selection	{background: transparent;}
+body {-webkit-tap-highlight-color: rgb(255,255,158);}
+
+body, html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	background: url('img/bg.svg') bottom center fixed;
+	background-size: cover;
+	color: rgb(60,60,60);
+	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+	font: 16px/24px @font;
+}
+#winegums {
+	width: 100%;
+}
+audio {
+	width:0;
+	height: 0;
+	opacity: 0
+}
+#titel {
+	margin: 40px 0 100px;
+	text-align: center;
+	h2 {
+		font-family: helvetica, arial, sans-serif;
+	}
+}
+.winegum-container {
+	position: relative;
+}
+.winegum-oval {
+	width: 50px;
+	height: 130px;
+	transform: scale(.8);
+	&:before {
+		position: absolute;
+		content: "";
+		width: 112px;
+		height: 250px;
+		margin-top: -176px;
+		opacity: .3;
+		border-radius: 50px;
+		background: #fff
+	}
+}
+
+.winegum-square {
+	width: 60px;
+	height: 60px;
+	transform: rotate(45deg);
+	&:before {
+		position: absolute;
+		content: "";
+		width: 122px;
+		height: 125px;
+		margin-top: -84px;
+		opacity: .3;
+		border-radius: 50px;
+		background: #fff
+	}	
+}
+.mouth {
+	width: 30px;
+	height: 23px;
+	background: brown;
+	border-radius: 100%;
+	margin: 44px auto;
+	position: relative;
+	z-index: 10;
+	overflow: hidden;
+	transition:.2s;
+	&:after {
+		width: 30px;
+		height: 10px;
+		background: white;
+		position: absolute;
+		bottom: -3px;
+		content: "";
+		border-radius: 100%;
+		opacity: .6;
+	}
+}
+.winegum {
+	border-radius: 15px;
+	background: pink;
+	position: relative;
+	overflow: hidden;
+	display: block;
+	margin: 0 auto;
+	float: left;
+	display: block;
+	margin:0 6%;
+	&:after {
+		width: 30px;
+		height: 30px;
+		background: #333;
+		content: "";
+		position: absolute;
+		top: -50px;
+	}
+}
+.winegum-round {
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	&:before {
+		position: absolute;
+		content: "";
+		width: 134px;
+		height: 125px;
+		margin-top: -66px;
+		margin-left: 29px;
+		opacity: .3;
+		border-radius: 70px;
+		background: #fff
+	}	
+}
+.pink {background: #e7007a;}
+.blue {background: #00a4d0;}
+.purple {background: #bd00ff;}
+.yellow {background: #f9ed32;}
+.green {background: #2bb673;}
+.winegum-square .mouth {
+	margin-left: 23px;
+	margin-top: 25px;
+	transform: rotate(-45deg) scale(0.8);
+}
+.active {
+	animation:winegum1 .5s infinite;
+	.mouth {
+		animation:mond .5s infinite;
+	}
+}
+.balloon {
+	width: 130px;
+	height: 80px;
+	border-radius: 90px;
+	background: rgb(255, 255, 255);
+	position: absolute;
+	top: -100px;
+	left: 96px;
+}
+@keyframes mond {
+	from {height: 0px;width: 0;}
+	50% {height: 30px;width: 30px;}
+	to {height: 0px;width: 0;}
+}
+@keyframes winegum1 {
+	from {margin-top: 0;}
+	50% {margin-top:-10px}
+	to {margin-top:0}
+}
+
+footer {
+	width: 100%;
+	clear: both;
+	font-family: helvetica, sans-serif;
+	position: fixed;
+	bottom: 0;
+	background: rgba(255,255,255,.3);
+	font-size: 10px;
+	padding: 0 100px;
+	box-sizing: border-box;
+	a {
+		color:#ff6600;
+	}
+}
+#author {
+	float: left;
+}
+#tweet {
+	float:right;
+	
+}
+#ie {
+	display: none;
+	position: absolute;
+	top:0 !important;
+	left: 0 !important;
+	z-index: 9999 !important;
+	width: 100%;
+	height: 100%;
+	background: red;
+	font-family: helvetica, arial, sans-serif !important;
+	font-size: 100px;
+	line-height: 130px;
+}
+#logo {
+	width: 125px;
+	height: 125px;
+	position: fixed;
+	right: 25px;
+	bottom: 50px;
+	opacity: .25;
+	transition:.6s;
+	&:hover {
+		opacity: 1;
+	}
+}
