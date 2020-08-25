@@ -1,0 +1,12 @@
+version: "3.6"
+
+services:
+
+  main:
+    image: httpd:alpine
+
+    volumes:
+      - ".:/usr/local/apache2/htdocs/"
+
+    ports:
+      - "1234:80"
